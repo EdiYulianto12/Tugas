@@ -1,0 +1,18 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+ footer{
+ 	height: 50px;
+ 	width: 100%;
+ 	background-color: rgb(0, 0, 0);
+ }
+ .color{
+  		background-color: rgb(107, 229, 210);
+      text-align: center;
+  	}
+  p{
+  	text-shadow: rgb(0, 0, 0);
+  	opacity: 0.7;
+  }

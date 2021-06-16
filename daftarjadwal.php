@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tabel Jadwal</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="gaya.css">
+  </head>
+<body>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="landing/index.php">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="daftarjadwal.php">Jadwal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="inputdata.php">Daftar</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="koreksiuser.php">Cari pendaftar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="daftaruser.php">Pendaftar Turnamen</a>
+      </li>    
+       <li class="nav-item">
+        <a class="nav-link" href="inputjadwal.php">Buat Jadwal</a>
+      </li>  
+       <li class="nav-item">
+        <a class="nav-link" href="koreksijadwal.php">Cari Jadwal</a>
+      </li> 
+        <li class="nav-item">
+        <a class="nav-link" href="hapususer.php">Hapus</a>
+      </li> 
+    </ul>
+  </div>  
+</nav>
+<br>
+	<?php 
+$koneksi=new mysqli("localhost","root","","turnamen");
+$sql="SELECT * FROM `jadwal`";
+$q=$koneksi->query($sql);
+$rekord=$q->fetch_array();
+?>
+	<div class="container">
+  <center><h2>Jadwal Turnamen Yang akan di Selenggarakan</h2></center><br>          
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr class="color">
+        <th>Tanggal Turnamen</th>
+        <th>Jenis Game </th>
+        <th>Pol Prize </th>
+        <th>Kontak Panitia</th>
+      </tr>
+    </thead>
+    <tbody><?php do { ?>
+      <tr>
+        <td><?php echo $rekord['tanggaltur'];?></td>
+		    <td><?php echo $rekord['jenisgame'];?></td>
+        <td><?php echo $rekord['hadiah'];?></td>
+		    <td><?php echo $rekord['kontak'];?></td>
+      </tr><?php } while($rekord =$q->fetch_array());?>
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>  <br>
+<br>
+<br>
+<br>
+<br>    
+<footer >
+   <h2><center><font color="white">@2021 | Kelompok ?</h2></center>
+
+
+
+ 
+</footer>
+</body>
+</html>
